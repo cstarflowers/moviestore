@@ -31,15 +31,9 @@
         <ul class="list-group">
           {% for review in template_data.reviews %}
           <li class="list-group-item pb-3 pt-3">
-            {% if review.isReported %} 
-            <h5 class="card-title">
-              Review by {{ review.user.username }} (Reported)
-            </h5>
-            {% else %}
             <h5 class="card-title">
               Review by {{ review.user.username }}
             </h5>
-            {% endif %}
             <h6 class="card-subtitle mb-2 text-muted">
               {{ review.date }}
             </h6>
@@ -49,8 +43,6 @@
             </a>
             <a class="btn btn-danger" href="{% url 'movies.delete_review' id=template_data.movie.id review_id=review.id %}">Delete
             </a>
-            {% else %}
-              <a class="btn btn-danger" href="{% url 'movies.report_review' id=template.data.movie.id review_id=review.id %}">Report</a>
             {% endif %}
           </li>
           {% endfor %}
