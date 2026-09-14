@@ -31,11 +31,6 @@
         <ul class="list-group">
           {% for review in template_data.reviews %}
           <li class="list-group-item pb-3 pt-3">
-            {% if review.isReported %} 
-            <h5 class="card-title">
-              Review by {{ review.user.username }} (Reported)
-            </h5>
-            {% else %}
             <h5 class="card-title">
               Review by {{ review.user.username }}
             </h5>
